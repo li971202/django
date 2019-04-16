@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lx.music</title>
+        <link rel="shortcut icon" href="/static/resume/images/favicon.ico"/>
+
+	<link rel="stylesheet" type="text/css" href="/static/tboys/css/component.css" />
+
+	<style>
+		.dianji:hover{
+			color: white;
+		}
+        #auth{
+            width:130px;
+        }
+        #hidden_img{
+            display:None
+        }
+        .input_outer:hover #hidden_img{
+            display: block;
+        }
+	</style>
+
+<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+{#刷新验证码#}
+
+<script type="text/javascript" src="/static/tboys/js/lx.js"></script>
+<script>
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+{#    function refresh(ths)#}
+{#            {ths.src = ths.src + '?'}#}
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('2 3(0){0.1=0.1+\'?\'}',4,4,'ths|src|function|refresh'.split('|'),0,{}));
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+{#页面刷新频率#}
+    function myrefresh() {
+        window.location.reload();
+        }
+        setTimeout('myrefresh()', 30000);
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('3 0(){2.1.6()}5(\'0()\',4);',7,7,'myrefresh|location|window|function|30000|setTimeout|reload'.split('|'),0,{}));
+
+
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';var a = '﷩';
+</script>
+
+<link href="/static/tboys/css/vendors.css" rel="stylesheet">
+<link href="/static/tboys/css/login.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+<div>
+	<div class="container demo-1">
+		<div class="content">
+			<div >
+				<canvas id="demo-canvas"></canvas>
+				<div class="logo_box">
+					<h1 style="color: #dc2c5a">Welcome to lx.music</h1>
+
+
+					<form method="post" action="">
+						{% csrf_token %}
+                        <div  style="display: none" >
+							<input type="text" name="pachong" value="{{ forms }}sadgiueqhfdfj" hidden>
+						</div>
+                        <div  style="display: none" >
+							<input type="text" name="pojieba" value="{{ pojieba }}" hidden>
+						</div>
+                               <div  style="display: none" >
+							<input type="text" name="keke" value="shangmianjiekaiwofuni" hidden>
+						</div>
+
+						<div class="input_outer">
+							<span class="u_user" style="border-radius:64%"></span>
+                            <input name="firstName" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+
+
+                        </div>
+						<div class="input_outer">
+							<span class="us_uer" style="border-radius:64%"></span>
+							<input name="inputPassword" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+						</div>
+
+                                    <div class="input_outer">
+							<span class="us_uer" style="border-radius:64%"></span>
+							<input name="auth" id = "auth" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="text" placeholder="请输入验证码">
+
+                                 <div id="hidden_img" style="z-index: 10;" ><img style="float: right;border-radius:15px" id="auth_img" onclick="refresh(this)" src="/music/auth_code/"  alt="请刷新页面"></div>
+                                    </div>
+
+
+
+						<div class="mb2">
+							<a class="act-but submit" id="input" style="color: #FFFFFF">
+								<input type="submit" value="登录">
+							</a>
+						</div>
+						<div class="text-center">
+
+							<label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ look }}</label>
+						</div>
+					</form>
+                    </div></div>
+				</div>
+			</div>
+		</div>
+	</div><!-- /container -->
+
+
+</div>
+<main>
+	<div class="frame" style="margin-right: 200px">
+		<div class="frame__demos">
+            <a class="frame__demo"  href="/music/regiest/">注册账号</a>
+			<a href="" class="frame__demo"></a>
+			<a href="" class="frame__demo"></a>
+			<a href="/" class="frame__demo">关于我</a>
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript" src="/static/tboys/js/vendors.js"></script>
+<script type="text/javascript" src="/static/tboys/js/login.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lx.music</title>
+	<link rel="stylesheet" type="text/css" href="/static/tboys/css/component.css" />
+
+	<style>
+		.dianji:hover{
+			color: white;
+		}
+
+	</style>
+
+<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+
+<link href="/static/tboys/css/vendors.css" rel="stylesheet">
+<link href="/static/tboys/css/login.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="background"></div>
+<div class="overlay"></div>
+<div>
+		<div class="container demo-1">
+			<div class="content">
+				<div id="large-header" class="large-header">
+					<canvas id="demo-canvas"></canvas>
+					<div class="logo_box" style="margin-top: -270px;">
+						<h3>注册账号</h3>
+						 <form action="" method="post">
+                                 {% csrf_token %}
+							<div class="input_outer" style="margin-bottom:10px" >
+								<span class="u_user"></span>
+								<input name="firstName" id="firstName" class="text" style="color: #FFFFFF !important" type="text" placeholder="用户名">
+							</div>
+
+                            <div class="input_outer" style="margin-bottom:10px" >
+								<span class="u_user"></span>
+								<input name="lastName"  id="lastName"  class="text" style="color: #FFFFFF !important" type="text" placeholder="昵称">
+							</div>
+
+							<div class="input_outer" style="margin-bottom:10px" >
+								<span class="us_uer"></span>
+								<input name="inputEmail"  id="inputEmail"  class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="email"  placeholder="邮箱">
+							</div>
+
+							<div class="input_outer" style="margin-bottom:10px" >
+								<span class="us_uer"></span>
+								<input name="inputPassword"  id="inputPassword"  class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="登录密码">
+							</div>
+
+							<div class="input_outer" style="margin-bottom:10px" >
+								<span class="us_uer"></span>
+								<input name="confirmPassword"  id="confirmPassword"  class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;" value="" type="password" placeholder="重复密码">
+							</div>
+
+							<div class="mb2">
+                                <a class="act-but submit" id="input" style="color: #FFFFFF">
+                                	<input id="input_1" type="submit" value="注册">
+                                </a>
+                            </div>
+                                <div class="text-center">
+                                      <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ look }}</label>
+
+                                </div>
+                         </form>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+</div>
+<main>
+	<div class="frame" style="margin-right: 200px">
+		<div class="frame__demos">
+            <a class="frame__demo"  href="/music/login/">前往登录</a>
+{#           <a class="act-but submit" id="input_2" href="/music/login/">前往登录</a>#}
+			<a href="" class="frame__demo"></a>
+			<a href="" class="frame__demo"></a>
+			<a href="/" class="frame__demo">关于我</a>
+		</div>
+	</div>
+</main>
+
+<script type="text/javascript" src="/static/tboys/js/vendors.js"></script>
+<script type="text/javascript" src="/static/tboys/js/login.js"></script>
+{#<script type="text/javascript" src="/static/tboys/js/jquery.js/jquery.min.js"></script>#}
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+<script>
+    $(
+        function () {
+            $("#firstName").blur(
+                function () {
+                    var name=$("#firstName").val();
+                    console.log(name);
+                    $.ajax(
+                        {
+                            url:"/music/nameValid/?firstName="+name,
+                            type:"get",
+                            data:"",
+                            success:function (data)
+                            {
+                                console.log(data);
+                                result=data["result"];
+                                if (result==="F"){
+                                    alert("用户名已存在!");
+                                    $("#firstName").val(data["data"])
+                                }
+                                else if(result==="C"){
+                                    alert("用户名不能为空!");
+                                    $("#firstName").val(data["data"])
+                                }
+                            },
+                                //请求成功后执行函数
+                            error:function (error) {
+                                //后台返回的错误数据
+                                console.log(error)
+                            } //请求失败后执行函数
+                        }
+                    )
+                }
+                )
+        }
+    )
+  </script>
+</html>

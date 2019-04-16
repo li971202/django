@@ -1,0 +1,843 @@
+﻿{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lx.music</title>
+<meta name="keywords" content="Lx.music" />
+<meta name="description" content="person music" />
+<link rel="stylesheet" type="text/css" href="{% static 'tboys/csss/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'tboys/csss/player.css' %}" />
+<link rel="shortcut icon" href="/static/resume/images/favicon.ico"/>
+<script type="text/javascript" src="/static/tboys/jss/modernizr.js"></script>
+<script>
+if ((!to3d()) || document.documentMode == 10 || document.documentMode == 11){ 
+	window.location="error/error.html";
+}
+</script>
+</head>
+<body>
+
+
+
+<!--头部 开始-->
+<div id="header">
+    <!--顶部bar 开始-->
+
+    <div id="headCont">
+        <audio id="audioPlayer"></audio>
+    	<!--二级导航-->
+        <nav class="sub_nav">
+            <div class="nav_list">
+                <ul>
+                    <li>
+                    	<a href="/music/" class="smallogo">
+                        	<span class="mini_logo"></span>
+                        </a>
+                    </li>
+                    <li><a href="javascript:" class="home"></a></li>
+                    
+                    <div class="sub_list" id="sub_list">
+                        <p class="active">
+                        	<a href="#">That music dwells in my mind.</a>
+                        </p>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+  	<!--头部导航  结束-->
+</div>
+
+<!-- 音乐馆 模块 开始  default-->
+<section class="section_cont">
+    <!--轮播图 开始 -->
+    <div class="main_banner">
+        <div class="main_banner_bg"></div>
+        <div class="main_banner_wrap">
+            <div class="main_banner_box" id="m_box">
+                <a href="javascript:void(0)" class="banner_btn js_pre">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <a href="javascript:void(0)" class="banner_btn btn_next js_next">
+                    <span class="banner_btn_arrow"><i></i></span>
+                </a>
+                <ul>
+                    <li id="imgCard0">
+                        <a href="javascript:"><span style="opacity:0;"></span></a>
+                        <img src="/static/tboys/main_banner/2ad7c5e1ff2e0064a6e785a73c9b7364.png" alt="">
+                        <p style="bottom:0">你一直在等我，但是我却现在才来.</p>
+                    </li>
+                    <li id="imgCard1">
+                        <a href="javascript:"><span style="opacity:0.4;"></span></a>
+                        <img src="/static/tboys/main_banner/eebf049cd4bd31196478bdee66acdcdd.png" alt="">
+                        <p>樱花满地集于我心 楪舞纷飞祈愿相随.</p>
+                    </li>
+                    <li id="imgCard2">
+                        <a href="javascript:"><span style="opacity:0.4;" ></span></a>
+                        <img src="/static/tboys/main_banner/161a3567e85b53621a1074fcb64d62bb.png" alt="">
+                        <p>无意义的理想,迟早会在现实面前崩溃.</p>
+                    </li>
+                    <li id="imgCard3">
+                        <a href="javascript:"><span style="opacity:0.4;"></span></a>
+                        <img src="/static/tboys/main_banner/873b57828b3a0a67-2a532e4245c541ae-71f399aeb90edf9940ed27bd2accbccb.png" alt="">
+                        <p>什么都无法舍弃的人，什么也改变不了.</p>
+                    </li>
+                    <li id="imgCard4">
+                        <a href="javascript:"><span style="opacity:0.4;"></span></a>
+                        <img src="/static/tboys/main_banner/6c4c5d3e62274e1fa1a314aa8bede506.png" alt="">
+                        <p>只要是活着的东西，就算是神都杀给你看</p>
+                    </li>
+                </ul>
+                <!--火狐倒影图层-->
+                <p id="rflt"></p>
+                <!--火狐倒影图层-->
+            </div>
+            <!--序列号按钮-->
+            <div class="btn_list">
+                <span class="cur"></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+    <!--轮播图 结束 -->
+
+
+    <div class="new_mv new_common">
+
+        <div class="new_mv_title new_common_title index_mv_title">
+            <span>精心推荐</span>
+            <a href="?cat=6" class="more"></a>
+            <ul>
+                <li><a class="cur" href="javascript:;">电音</a></li>
+                <li><a href="javascript:;">灵魂</a></li>
+                <li><a href="javascript:;">magic</a></li>
+            </ul>
+        </div>
+
+        <div class="new_mv_body index_mv_body">
+
+            <div class="mvList" id="mv_rank_list" style="display:block;">
+                <ul class="sb" id="main">
+			        <li>
+                        <a href="javascript:;" class="playIcon" >
+                            <img width="220" height="125" src="https://p.ssl.qhimg.com/dmsmfl/120_75_/t01047684fe0141d339.webp?size=640x400&phash=" class="attachment-220x125 wp-post-image" alt="mv_1x2_10" />
+                            <strong>Virtual Riot</strong>
+                            <span>
+                                 <font>Init&#8211; Virtual Riot</font>
+                                 <font><i></i></font>
+                                 <font><i></i>10<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+		            <li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323325&di=73ad9ccf558c4dd64b6acd8767367b96&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Fdc3098153ff7ecc10066ef2e4c618be515f55aa0.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Cyan Lpegd</strong>
+                            <span>
+                                <font>421 &#8211;Cyan Lpegd</font>
+                                <font><i></i></font>
+                                <font><i></i>9<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552678683913&di=3eec9b05a44bbf17083e829f0b7441a4&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2Fa6c7b8acad424419110e96e167650f8ddaaa2bd5.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Slip</strong>
+                            <span>
+                                <font>Slip&#8211; 徐梦圆</font>
+                                <font><i></i></font>
+                                <font><i></i>3<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                           <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323325&di=00c8ae61032a7caf1e45c05c4981595f&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2Fe27d58a5cd6fe05768f15ae19a6f7a73aac23a77.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Lost</strong>
+                            <span>
+                                <font>Tule</font>
+                                <font><i></i></font>
+                                <font><i></i>1<em>2 </em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                       <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323326&di=6c15bc759946eb5eff9d85d46a64e2b0&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw1723h1144%2F20171223%2F2ff0-fypvuqf4405883.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Venemy</strong>
+                            <span>
+                                <font>Zest &#8211; Venemy</font>
+                                <font><i></i></font>
+                                <font><i></i>0<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323328&di=f6401a3808e14eb0502ada53165944e2&imgtype=0&src=http%3A%2F%2Fwww.h19club.com%2FUpload%2FDSC06319.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Blume</strong>
+                            <span>
+                                <font>Cool &#8211; Blume</font>
+                                <font><i></i></font>
+                                <font><i></i>0<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                      <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323329&di=0a93c7794e4331c79bb05042b2067c9c&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2F7d408311e3d0808f957438d0c74ebe4f3452a633.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>SaMZing</strong>
+                            <span>
+                                <font>Echo &#8211; SaMZing</font>
+                                <font><i></i></font>
+                                <font><i></i>10<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+				    <li>
+                       <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553238294&di=296a7fba713b22162ede1877380fb748&imgtype=jpg&er=1&src=http%3A%2F%2Fp4.music.126.net%2FA0JSh290gufcuRwIgL-Ovw%3D%3D%2F3421680187491650.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Valcos</strong>
+                            <span>
+                                <font>Vivid &#8211; Valcos</font>
+                                <font><i></i></font>
+                                <font><i></i>1<em>26</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323329&di=80ffd2129bdcaa82f0d63cb1b862bbd1&imgtype=0&src=http%3A%2F%2Fp0.qhimgs4.com%2Ft012ea0e1a04aa4b94d.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Distrion</strong>
+                            <span>
+                                <font>Icaro &#8211; Distrion</font>
+                                <font><i></i></font>
+                                <font><i></i>7<em>23</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552673323330&di=2cd0d7febad3de8e663202f63770d9bb&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F510b2c46bb3fbd5c3f2e29d07245df72304a3df2.png" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Sabrina</strong>
+                            <span>
+                                <font>Alien &#8211;Sabrina</font>
+                                <font><i></i></font>
+                                <font><i></i>90<em>3</em></font>
+                            </span>
+                        </a>
+                    </li>
+			    </ul>
+            </div>
+            <!--2spirit-->
+            <div class="mvList">
+                <ul id="spirit">
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674450692&di=47bcc2ac6c905c1fb68b8f7fa9be3b90&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F49d7eabe190431eea27707874828147356b4e7b9.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>梶浦由記</strong>
+                            <span>
+                                <font>M19+20 &#8211; 梶浦由記</font>
+                                <font><i></i></font>
+                                <font><i></i>12<em>6</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674450691&di=133a8e39c992df290fe4da8e43dc2c1a&imgtype=0&src=http%3A%2F%2Fgss0.baidu.com%2F-4o3dSag_xI4khGko9WTAnF6hhy%2Fzhidao%2Fpic%2Fitem%2F9825bc315c6034a86af5ef8acd134954092376a1.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>梶浦由記</strong>
+                            <span>
+                                <font>Sis puella magica! &#8211; 梶浦由記</font>
+                                <font><i></i></font>
+                                <font><i></i>4<em>27</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674450690&di=2f6d2539012eaf86f89bfe5a792270c7&imgtype=0&src=http%3A%2F%2Fpic2.16pic.com%2F00%2F51%2F84%2F16pic_5184592_b.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>梶浦由記</strong>
+                            <span>
+                                <font>月は优しく (月) &#8211; 梶浦由記</font>
+                                <font><i></i></font>
+                                <font><i></i>7<em>22</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                       <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674450689&di=bc7a50d5fc656278f4befbd412059de9&imgtype=0&src=http%3A%2F%2Fwww.bizhidaquan.com%2Fd%2Ffile%2Fhuahui%2Fhuacaoshuye%2F2014-10-29%2F9d2fd06dfff3c3bc8900a360747e8c3f.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>染音若蔡</strong>
+                            <span>
+                                <font>Euterpe エウテルペ  &#8211; 染音若蔡</font>
+                                <font><i></i></font>
+                                <font><i></i>4<em>9</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                       <a href="javascript:;" class="playIcon">
+                           <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674450686&di=713d3dcab03e22a1e3c74fd549caf091&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201602%2F20%2F20160220213905_Cyk4i.thumb.700_0.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>杨秉音</strong>
+                            <span>
+                                <font>幻光&#8211; 杨秉音</font>
+                                <font><i></i></font>
+                                <font><i></i>23<em>1</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                      <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674549711&di=2d64ecbdaedc3dfdb605e1ebcfed6abc&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201404%2F04%2F20140404060138_4hrRF.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>神罗Shinra</strong>
+                            <span>
+                                <font>世界の約束 -神罗Shinra</font>
+                                <font><i></i></font>
+                                <font><i></i>8<em>7</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                       <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674549710&di=2706c8bef6f379d8e992e9bd998f3ce2&imgtype=0&src=http%3A%2F%2Fpic.rmb.bdstatic.com%2Fd3022796a9b97024a11ae81ef0794834.jpeg%40wm_2%2Ct_55m%2B5a625Y%2B3L%2BWKqOa8q%2BasoeWFg%2BWnkA%3D%3D%2Cfc_ffffff%2Cff_U2ltSGVp%2Csz_33%2Cx_21%2Cy_21" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>久石譲</strong>
+                            <span>
+                                <font>Cave OF Mind &#8211; 久石譲</font>
+                                <font><i></i></font>
+                                <font><i></i>6<em>9</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674549710&di=04302195caa7fc6cdd64b3910737f20c&imgtype=0&src=http%3A%2F%2Fpic.rmb.bdstatic.com%2F548b9804716b6988fa605ef6b59a9655.jpeg%40c_1%2Cw_650%2Ch_845%2Cx_0%2Cy_37" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>K. Williams</strong>
+                            <span>
+                                <font>幽灵公主 &#8211; K. Williams</font>
+                                <font><i></i></font>
+                                <font><i></i>1<em>9</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674549709&di=2c9374c36d3c1948ef28d32710880559&imgtype=0&src=http%3A%2F%2Fpic.rmb.bdstatic.com%2F9de8e45a2bd8ada79177d86b3a80a2cf.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>魏小涵</strong>
+                            <span>
+                                <font>心之逆鳞&#8211; 魏小涵</font>
+                                <font><i></i></font>
+                                <font><i></i>7<em>25</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552674659654&di=cba82f57aa22287f1cda638dd2f247ab&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F53a56410505594563b431dcbf8041087b6b11e79.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Qaijff</strong>
+                            <span>
+                                <font>愛を教えてくれた君へ &#8211; Qaijff</font>
+                                <font><i></i></font>
+                                <font><i></i>10<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+				</ul>
+            </div>
+            <!--3magic-->
+            <div class="mvList">
+                <ul id="magic">
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060300&di=6ee7ece2e939f92e5fcdb47d3fa6f35d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201402%2F24%2F20140224203350_eimyV.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>川井憲次</strong>
+                            <span>
+                                <font>群雄疾走 &#8211; 川井憲次</font>
+                                <font><i></i></font>
+                                <font><i></i>100<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060298&di=963098ce3d3664914ade6bdaf20d22ac&imgtype=0&src=http%3A%2F%2Fimglf1.ph.126.net%2Fw0HMmhKkt5I5_TvxZZxgGg%3D%3D%2F6608529976352980348.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>EGOIST</strong>
+                            <span>
+                                <font>Ghost of a smile &#8211; EGOIST</font>
+                                <font><i></i></font>
+                                <font><i></i>54<em>22</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060297&di=265646e4a017391457aefbb531417ac5&imgtype=0&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2Fed252bce8494879d84f8b5156bbe3746de8a072d.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>大竹佑季</strong>
+                            <span>
+                                <font>樱子小姐的脚下 &#8211; 大竹佑季</font>
+                                <font><i></i></font>
+                                <font><i></i>8<em>26</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060294&di=12a1030ce34747307c409661480c8c98&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201401%2F04%2F20140104235918_uNikH.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>豚乙女</strong>
+                            <span>
+                                <font>非科学的表裏一体 &#8211; 豚乙女</font>
+                                <font><i></i></font>
+                                <font><i></i>10<em>2</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060294&di=b80b9d3dd427e042bbc7c15c5537d55e&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201504%2F06%2F20150406H4138_icRex.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>FELT</strong>
+                            <span>
+                                <font>You're the Shine &#8211; FELT</font>
+                                <font><i></i></font>
+                                <font><i></i>9<em>23</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060321&di=8cbf347a8e85499de0eea0d9721cb83d&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201506%2F25%2F20150625220640_3jSEQ.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>清浦夏実</strong>
+                            <span>
+                                <font>旅の途中 &#8211; 清浦夏実</font>
+                                <font><i></i></font>
+                                <font><i></i>90<em>8</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060320&di=43cbe86c864684b62a9eb42ed72b6686&imgtype=0&src=http%3A%2F%2Fp2.gexing.com%2FG1%2FM00%2F1F%2FA5%2FrBACFFMa47CRjnEwAARsDSxzvDk354.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>東山奈央</strong>
+                            <span>
+                                <font>夏祭り &#8211;東山奈央</font>
+                                <font><i></i></font>
+                                <font><i></i>5<em>29</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675060319&di=4e281c614840dccf4eda5caf442648ed&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201605%2F15%2F20160515233306_GsReQ.jpeg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>Nevve</strong>
+                            <span>
+                                <font>Sway &#8211; Nevve</font>
+                                <font><i></i></font>
+                                <font><i></i>8<em>28</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675333553&di=77da69f69637ffe168495bc23194b48f&imgtype=0&src=http%3A%2F%2Fpccoo.cn%2Fablum%2F20120720%2F20120720163444582.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong> Breathe Carolina</strong>
+                            <span>
+                                <font>Vanish &#8211;  Breathe Carolina</font>
+                                <font><i></i></font>
+                                <font><i></i>0<em>28</em></font>
+                            </span>
+                        </a>
+                    </li>
+					<li>
+                        <a href="javascript:;" class="playIcon">
+                            <img width="220" height="125" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552675333552&di=85ad2b5356e016e5db109823f4ab2277&imgtype=0&src=http%3A%2F%2Fp3.gexing.com%2FG1%2FM00%2F90%2F68%2FrBACFFYTl4nyAoM6AAUBrUq0JPc967.jpg" class="attachment-220x125 wp-post-image" alt="" />
+                            <strong>MEIDEN</strong>
+                            <span>
+                                <font>It's Over &#8211; MEIDEN</font>
+                                <font><i></i></font>
+                                <font><i></i>20<em>8</em></font>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="songs_rcmd_title">
+        <div class="rcmd_left_title rcmd_title">
+            <span>Elegant</span>
+            <a href="javascript:" class="more">/more</a>
+        </div>
+        <div class="rcmd_center_title rcmd_title">
+            <span>Ethereal</span>
+            <a href="javascript:" class="more">/more</a>
+        </div>
+        <div class="rcmd_right_title rcmd_title">
+            <span>Silence</span>
+            <a href="javascript:" class="more">/more</a>
+        </div>
+    </div>
+
+    <div class="songs_rcmd" id="songs_rcmd">
+        <div class="songs_rcmd_cont">
+            <ul class="rcmd_left rcmd_cont" id="latest">
+				<li>
+                    <a href="javascript:" class="musicName"> Fleur de lis &#8211; Noicybino</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Dance, cherry blossoms! &#8211; Yuri akiyama</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Lost in Love &#8211; Bois LanYun</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">远すぎた空 &#8211; Akito</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Whether &#8211;  AniFace</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Constellation Of Tatyana &#8211; Yakuro</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Princess &#8211; α·Pav</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Day by Day &#8211; Shirfine</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">blue blossoms &#8211; 久遠</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+            </ul>
+            <ul class="rcmd_center rcmd_cont" id="popular">
+				<li>
+                    <a href="javascript:;" class="musicName">木头的心 &#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">初恋旧爱新欢 &#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">She Is My Sin &#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Down &#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">Call of the ambulance &#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">听见下雨的声音 &#8211;</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">夏天的风&#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">开始懂了 &#8211;</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="musicName">我不难过&#8211; </a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+            </ul>
+            <ul class="rcmd_right rcmd_cont" id="rank">
+				<li>
+                    <a href="javascript:;" class="musicName">创奏&#8211; 霜月はるか</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">願い枯れゆく歌声 &#8211; Ether</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">LICHT MEER &#8211; 河合夕子</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">Nocturne No. 2  &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">夜曲 &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">降E大调夜曲 &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">即兴幻想曲 &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">Nocturne op. 32 &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+				<li>
+                    <a href="javascript:;" class="musicName">Prelude in Des &#8211; Chopin</a>
+                    <a class="shareIcon" href="javascript:;"></a>
+                    <a class="playIcon" href="javascript:;"></a>
+                </li>
+			</ul>
+        </div>
+    </div>
+
+    <div class="omnibus hot_singer">
+        <div class="omnibus_cont new_common">
+            <div class="omnibus_title new_common_title">
+                <span>A fantasy world</span>
+                <a href="javascript:" class="more"></a>
+            </div>
+            <ul id="omnibus_list">
+                <li class="post_big">
+                    <a href="javascript:;">
+                        <img src="/static/tboys/imagess/ksoa.png" alt="" width="305" height="290">
+                        <i></i>
+                    </a>
+                    <a href="javascript:;">The divine comedy as first love</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src="/static/tboys/imagess/Deuxième dollars.jpg" alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:;">A new world</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src='/static/tboys/imagess/fasd.png' alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:">This is our dream</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src="/static/tboys/imagess/ariko.png" alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:">what feels most natural</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src='/static/tboys/imagess/msoal.png' alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:">I can appreciate that</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src='/static/tboys/imagess/lise.png' alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:">Tell myths about love</a>
+                </li>
+                <li class="post_small">
+                    <a href="javascript:">
+                        <img src="/static/tboys/imagess/jisad.png" alt="" width="130" height="130">
+                        <span></span>
+                    </a>
+                    <a href="javascript:">In a different world</a>
+                </li>
+            </ul>
+        </div>
+        <div class="hot_singer_cont new_common">
+            <div class="hot_singer_title new_common_title">
+                <span>Artist's soul</span>
+                <a href="javascript:" class="more"></a>
+            </div>
+            <ul class="singer_list">
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src="/static/tboys/imagess/18808245906449965.jpg" alt="" width="70" height="70"></a>
+                    <a href="javascript:" class="singer">梶浦由记</a>
+                </li>
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src="/static/tboys/imagess/18619129906152259.jpg" alt="" width="70" height="70"></a>
+                    <a href="javascript:" class="singer">花たん</a>
+                </li>
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src=" /static/tboys/imagess/19127104277052748.jpg" alt="" width="70" height="70"></a>
+                    <a href="?p=363" class="singer">泽野弘之</a>
+                </li>
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src=" /static/tboys/imagess/19124905253592749.jpg" alt="" width="70" height="70"></a>
+                    <a href="javascript:" class="singer">Sound Horizon</a>
+                </li>
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src='/static/tboys/imagess/109951163112362346.jpg' alt="" width="70" height="70"></a>
+                    <a href="javascript:" class="singer">Aimer</a>
+                </li>
+                <li>
+                    <a href="javascript:" class="singerPhoto">
+                        <img src=" /static/tboys/imagess/3283141725800255.jpg" alt="" width="70" height="70"></a>
+                    <a href="javascript:" class="singer">れをる</a>
+                </li>
+                <div style="clear:both;"></div>
+            </ul>
+        </div>
+    <div style="clear:both"></div></div>
+</section>
+
+
+
+
+
+<!-- 左侧播放器 开始-->
+<div id="jp_container_N" class="jp-video jp-video-270p" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div id="jquery_jplayer_N"class="jp-jplayer"></div>
+		<div class="jp-gui">
+			<div class="jp-video-play">
+				<button class="jp-video-play-icon" role="button" tabindex="0">播放</button>
+			</div>
+			<div class="jp-interface">
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-current-time" role="timer" aria-label="time"></div>
+				<div class="jp-duration" role="timer" aria-label="duration"></div>
+				<div class="jp-controls-holder">
+					<div class="jp-controls">
+						<button class="jp-previous" role="button" tabindex="0">上一曲</button>
+						<button class="jp-play" role="button" tabindex="0">播放</button>
+						<button class="jp-next" role="button" tabindex="0">下一曲</button>
+						<button class="jp-stop" role="button" tabindex="0">暂停</button>
+					</div>
+					<div class="jp-volume-controls">
+						<button class="jp-mute" role="button" tabindex="0">静音</button>
+						<button class="jp-volume-max" role="button" tabindex="0">最大音量</button>
+						<div class="jp-volume-bar">
+							<div class="jp-volume-bar-value"></div>
+						</div>
+					</div>
+					<div class="jp-toggles">
+						<button class="jp-repeat" role="button" tabindex="0">重复</button>
+						<button class="jp-shuffle" role="button" tabindex="0">随机</button>
+						<!--<button class="jp-full-screen" role="button" tabindex="0">全屏</button>-->
+					</div>
+				</div>
+				<div class="jp-details">
+					<div class="jp-title" aria-label="title"></div>
+				</div>
+			</div>
+		</div>
+		<div class="jp-playlist">
+        	<div class="jp-playlist-box">
+                <ul>
+                    <!-- 该方法使用无序列表displayplaylist()播放列表 -->
+                    <li></li>
+                </ul>
+            </div>
+		</div>
+		<div class="jp-no-solution">
+			<span>升级需要</span>
+			您浏览器赞不支持播放，请更新版本
+            <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash插件</a>.
+		</div>
+	</div>
+    <!--歌曲列表滚动条-->
+    <div class="scrollBar">
+    	<div class="bar"></div>
+    </div>
+    <!--播放器展开隐藏按钮-->
+    <button type="button" class="folded_bt" title="点击收缩" id="btnfold">
+    	<span></span>
+   	</button>
+    <div id="listRemove"></div><!--移除全部歌曲按钮--> 
+    <div id="listClose"></div><!--歌曲列表展开收缩按钮-->
+</div>
+<!-- 左侧播放器 结束-->
+
+<!--底部 开始 -->
+<div class="footer" id="footer">
+	<div class="footer_cont">
+    	<div class="footer_cont_left">
+        	<p>
+            	<a href="javascript:">About me</a>|<a href="javascript:">History</a>|<a href="javascript:">Cartoon</a>|
+                <a href="javascript:">Ad service</a>|<a href="javascript:">Movie link</a>|<a href="javascript:">Help</a>
+            </p>
+            <p><a href="/" target="_blank">
+            	Copyright © Lx  All Rights Reserved</a>
+            </p>
+        </div>
+        <div class="footer_cont_right">
+        	<span>About me</span>
+        	<ul>
+                <li><a href="/" target="_blank"><span></span></a></li>
+                <li></li>
+                <li>
+					<a href="javascript:" class="twoCode">
+						<span></span>
+						<img class="tCode" src="/static/tboys/imagess/993066119.png" width="100px" height="100px" alt="二维码" />
+					</a>
+				</li>
+                <li><a href="https://github.com/lixi5338619"><span></span></a></li>
+                <li><a href="https://blog.csdn.net/weixin_43582101" target="_blank"><span></span></a></li>
+            </ul>
+        </div>
+        <div id="toTop"></div>
+    </div>
+
+</div>
+<!--底部 结束 -->
+<script type="text/javascript" src="{% static 'tboys/jss/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'tboys/jss/index.js' %}"></script>
+<!--播放器js-->
+<script type="text/javascript" src="/static/tboys/jss/player.js"></script>
+<script type="text/javascript" src="/static/tboys/jss/playlist.js"></script>
+<script type="text/javascript" src="/static/tboys/jss/player_database.js"></script>
+<!--播放器js-->
+<!-- 底部模板调用 结束 -->
+</body>
+</html>
+
+

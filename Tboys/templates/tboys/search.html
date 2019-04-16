@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"/>
+{#  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />#}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/static/resume/images/favicon.ico"/>
+
+<link rel="stylesheet" type="text/css" href="/static/tboys/csss/style.css" />
+<script type="text/javascript" src="/static/tboys/jss/modernizr.js"></script>
+    <title>Lx.music</title>
+</head>
+<body>
+
+<div id="header">
+    <!--顶部bar 开始-->
+
+    <div id="headCont">
+        <audio id="audioPlayer"></audio>
+    	<!--二级导航-->
+        <nav class="sub_nav">
+            <div class="nav_list">
+                <ul>
+                    <li>
+                    	<a href="/music/" target="_blank" class="smallogo">
+                        	<span class="mini_logo"></span>
+                        </a>
+                    </li>
+                    <li><a href="javascript:" class="home"></a></li>
+
+                    <div class="sub_list" id="sub_list">
+                        <p class="active">
+                        	<a href="#">People like me online. lx</a>
+                        </p>
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+  	<!--头部导航  结束-->
+</div>
+
+
+{#用户框#}
+<div style="margin-top: 20px;width: 100%;height:30px;" >
+       <div class="" style="float:left;margin-right: 30px;">
+
+            <span style="font-size: 16px;margin-left: 30px;color: #98598d;">欢迎你：<a href="/music/">{{ request.session.firstName }}</a></span>
+       </div>
+
+       <div>
+            <span style="float:right;margin-right: 40px"><a href="/music/logout/" style="color: #98598d;font-size: 15px">[注销]</a></span>
+       </div>
+
+       <div>
+            <span style="float:right;margin-right: 50px"><a href="/music/" style="color: #98598d;font-size: 15px" target="_blank">[返回主页]</a></span>
+       </div>
+</div>
+<div style="height: 55px"></div>
+{#搜索框#}
+    <div>
+    <form method="get" action="">
+      {% csrf_token %}
+    <div align="center">
+            <input type="search" name="kw" placeholder="请输入歌名" style="height: 40px;width: 30%">
+            <input type="submit" value="点击搜索" style="height: 40px;width: 90px;border-radius: 20%">
+    </div>
+    </form>
+
+    <div style="text-align: center;font-size: 19px">
+            <br/>
+          <div>歌名：{{ name }}</div><br/>
+          <div>歌手:{{ singer }}</div><br/>
+
+        <div>
+
+          <iframe id=rame src="{{ song_url }}" style="display: block;width: 100%;height: 100px" frameborder="0"></iframe></div>
+
+        <div align="center">
+            {% if pic %}
+                <img style="width: 300px;height: 300px;" src="{{ pic }}" alt=""></div><br/>
+            {% else %}
+                <img  style="width: 300px;height: 300px" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552739881085&di=1bbed480c8b74ca4958967ab5d80053a&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Fdc3098153ff7ecc10066ef2e4c618be515f55aa0.jpg" alt="">
+            {% endif %}
+        <div>
+                <div style="font-size: 15px">{{ geci }}</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--底部 开始 -->
+<div class="footer" id="footer">
+	<div class="footer_cont">
+    	<div class="footer_cont_left">
+        	<p>
+            	<a href="javascript:">About me</a>|<a href="javascript:">History</a>|<a href="javascript:">Cartoon</a>|
+                <a href="javascript:">Ad service</a>|<a href="javascript:">Movie link</a>|<a href="javascript:">Help</a>
+            </p>
+            <p><a href="/" target="_blank">
+            	Copyright © Lx  All Rights Reserved</a>
+            </p>
+        </div>
+        <div class="footer_cont_right">
+        	<span>About me</span>
+        	<ul>
+                <li><a href="/" target="_blank"><span></span></a></li>
+                <li></li>
+                <li>
+					<a href="javascript:" class="twoCode">
+						<span></span>
+						<img class="tCode" src="/static/tboys/imagess/993066119.png" width="100" height="100" alt="二维码" />
+					</a>
+				</li>
+                <li><a href="https://github.com/lixi5338619"><span></span></a></li>
+                <li><a href="https://blog.csdn.net/weixin_43582101" target="_blank"><span></span></a></li>
+            </ul>
+        </div>
+        <div id="toTop"></div>
+    </div>
+
+</div>
+<script>
+var rame = document.getElementById("rame");
+if(not {{ song_url }}){
+    document.getElementById(rame).style.display='none';
+}
+</script>
+<!--底部 结束 -->
+<script type="text/javascript" src="/static/tboys/jss/jquery.js"></script>
+<script type="text/javascript" src="/static/tboys/jss/index.js"></script>
+</body>
+</html>
+
+
